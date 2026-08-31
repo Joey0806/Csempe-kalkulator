@@ -1,0 +1,130 @@
+:root {
+    --bg-color: #1e2522;
+    --panel-bg: #2a332f;
+    --accent-pastel: #cbdcd3;
+    --accent-hover: #b9cfc3;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --input-bg: #222a26;
+    --input-border: #334139;
+    --result-bg: #232b27;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.calculator-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--panel-bg);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    text-align: center;
+    font-weight: 500;
+    margin: 0 0 30px 0;
+}
+
+#calcForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+
+input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background-color: var(--input-bg);
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-pastel);
+    box-shadow: 0 0 0 3px rgba(203, 220, 211, 0.1);
+}
+
+button {
+    padding: 14px;
+    background-color: var(--accent-pastel);
+    color: #1e2522;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover { background-color: var(--accent-hover); }
+
+.results-panel {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--result-bg);
+    border-radius: 12px;
+    display: none; /* Alapértelmezetten rejtve van, az app.js kapcsolja be */
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.results-panel h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 8px;
+}
+
+.results-panel p {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.results-panel p span:first-child {
+    color: var(--text-muted);
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    margin: 12px 0;
+}
+
+.highlight {
+    font-weight: 600;
+    color: var(--accent-pastel);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

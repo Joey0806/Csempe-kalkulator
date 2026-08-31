@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Csempe Kalkulátor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="calculator-card">
+    <h2>Csempe Kalkulátor</h2>
+    
+    <div id="calcForm">
+        <label>Belmagasság (méter)
+            <input type="number" id="belmagassag" step="0.1" value="2.5">
+        </label>
+        
+        <label>Falak szélességei (m, szóközzel)
+            <input type="text" id="szelessegek" value="3.2 4.1 2.5">
+        </label>
+        
+        <label>Csempe szélesség (cm)
+            <input type="number" id="csempeSzelesseg" value="20">
+        </label>
+        
+        <label>Csempe magasság (cm)
+            <input type="number" id="csempeMagassag" value="30">
+        </label>
+        
+        <label>Darabszám egy csomagban
+            <input type="number" id="csomagDb" value="22">
+        </label>
+        
+        <button onclick="szamol()">Számítás futtatása</button>
+    </div>
+    
+    <!-- Az eredményjelző panel fix szerkezete -->
+    <section id="eredmenyek" class="results-panel">
+        <h3>Részletes adatok</h3>
+        <div id="falankent"></div>
+        
+        <hr>
+        
+        <p><span>Nettó szükséglet:</span> <span id="resNetto"></span></p>
+        <p><span>Ajánlott mennyiség (+10%):</span> <span id="resAjanlott"></span></p>
+        
+        <hr>
+        
+        <p class="highlight"><span>Szükséges csomagok:</span> <span id="resCsomag"></span></p>
+        <p><span>Összesen vásárolt csempe:</span> <span id="resVasarolt"></span></p>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
